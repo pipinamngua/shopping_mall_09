@@ -13,3 +13,10 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+
+mix.copyDirectory('resources/assets/js/customers', 'public/js/customers');
+
+mix.copyDirectory('resources/assets/sass/customers', 'public/css/customers');
+
+mix.copyDirectory('resources/assets/images', 'public/images');
