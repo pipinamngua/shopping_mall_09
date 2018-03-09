@@ -1,0 +1,18 @@
+<?php 
+
+return
+    'Title_home' => 'Fashion-Shop',
+    'Offer of the day' => 'Offer of the day',
+    'Get flat 35% off on orders over $50!' => 'Get flat 35% off on orders over $50!',
+    'Login' => 'Login',
+    'Register' => 'Register',
+    'Contact' => 'Contact',
+    'Customer login' => 'Customer login',
+    'Not registered yet?' => 'Fashion-Shop',
+    'Register now' => 'Register now',
+    '! It is easy and done in 1' => '! It is easy and done in 1',
+    'minute and gives you access to special discounts and much more!' => 
+    'minute and gives you access to special discounts and much more!',
+]
+ ?>
+ 
