@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('customers/index');
 });
+
+Route::get('admin-home', function () {
+    return view('admin.master');
+});
