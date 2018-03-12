@@ -1,0 +1,23 @@
+{
+  "name": "shopping_mall_09",
+  "description": "",
+  "main": "",
+  "authors": [
+    "DuongNT <tienduong250196@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/TienDuong2501/shopping_mall_09",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "Font-Awesome": "^5.0.8",
+    "jQuery": "^3.3.1",
+    "bower_shopping_mall": "https://github.com/TienDuong2501/bower_shopping_mall.git"
+  }
+}

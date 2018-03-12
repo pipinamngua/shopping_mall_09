@@ -14,13 +14,13 @@
         <meta name="keywords" content="">
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
         <!-- styles -->
-        <link href="{{ asset('css/customers/font-awesome.css') }}" rel="stylesheet">
+        <link href="{{ asset('library/customers/bower_shopping_mall/customers/font-awesome.css') }}" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/customers/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/customers/animate.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/customers/owl.carousel.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/customers/owl.theme.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/customers/style.default.css') }}" rel="stylesheet">
+        <link href="{{ asset('library/customers/bower_shopping_mall/customers/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('library/customers/bower_shopping_mall/customers/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('library/customers/bower_shopping_mall/customers/owl.carousel.css') }}" rel="stylesheet">
+        <link href="{{ asset('library/customers/bower_shopping_mall/customers/owl.theme.css') }}" rel="stylesheet">
+        <link href="{{ asset('library/customers/bower_shopping_mall/customers/style.default.css') }}" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.png">
     </head>
     <body>

@@ -12,10 +12,9 @@ yarn-error.log
 .env
 /public/css/customers
 /public/js/customers
-/public/images
-/resources/assets
 /node_modules
 /public/fonts
 /.framgia-ci-reports
 package-lock.json
-
+/public/library
+/resources/assets
