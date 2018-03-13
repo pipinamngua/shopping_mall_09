@@ -13,17 +13,11 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(\App\User::class, function (Faker $faker) {
+$factory->define(\App\Model\ProductAttribute::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => str_replace(' ', '', strtolower($faker->name)) . '@gmail.com',
-        'password' => bcrypt('123456'),
-        'phone' => $faker->phoneNumber,
-        'address' => $faker->address,
-        'verify_token' => str_random(10),
-        'status' => config('status.active'),
-        'role_id' => config('role.customer'),
-        'remember_token' => str_random(10),
+        'product_id' => rand(1, 3),
+        'size_id' => rand(1, 4),
+        'color_id' => rand(1, 5),
         'created_at' => new DateTime,
         'updated_at' => new DateTime,
     ];
