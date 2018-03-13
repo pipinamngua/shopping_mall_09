@@ -3,6 +3,7 @@
 @section('content')
 <div id="all">
 <div id="content">
+    {{-- slide --}}
     <div class="container">
         <div class="col-md-12">
             <div id="main-slider">
@@ -78,18 +79,18 @@
                             <div class="flipper">
                                 <div class="front">
                                     <a href="detail.html">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive">
+                                    <img src="images/product1.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="detail.html">
-                                    <img src="img/product1_2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product1_2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <a href="detail.html" class="invisible">
-                        <img src="img/product1.jpg" alt="" class="img-responsive">
+                        <img src="images/product1.jpg" alt="" class="img-responsive">
                         </a>
                         <div class="text">
                             <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
@@ -105,18 +106,18 @@
                             <div class="flipper">
                                 <div class="front">
                                     <a href="detail.html">
-                                    <img src="img/product2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="detail.html">
-                                    <img src="img/product2_2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product2_2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <a href="detail.html" class="invisible">
-                        <img src="img/product2.jpg" alt="" class="img-responsive">
+                        <img src="images/product2.jpg" alt="" class="img-responsive">
                         </a>
                         <div class="text">
                             <h3><a href="detail.html">White Blouse Armani</a></h3>
@@ -147,18 +148,18 @@
                             <div class="flipper">
                                 <div class="front">
                                     <a href="detail.html">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
+                                    <img src="images/product3.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="detail.html">
-                                    <img src="img/product3_2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product3_2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <a href="detail.html" class="invisible">
-                        <img src="img/product3.jpg" alt="" class="img-responsive">
+                        <img src="images/product3.jpg" alt="" class="img-responsive">
                         </a>
                         <div class="text">
                             <h3><a href="detail.html">Black Blouse Versace</a></h3>
@@ -174,18 +175,18 @@
                             <div class="flipper">
                                 <div class="front">
                                     <a href="detail.html">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
+                                    <img src="images/product3.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="detail.html">
-                                    <img src="img/product3_2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product3_2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <a href="detail.html" class="invisible">
-                        <img src="img/product3.jpg" alt="" class="img-responsive">
+                        <img src="images/product3.jpg" alt="" class="img-responsive">
                         </a>
                         <div class="text">
                             <h3><a href="detail.html">Black Blouse Versace</a></h3>
@@ -201,18 +202,18 @@
                             <div class="flipper">
                                 <div class="front">
                                     <a href="detail.html">
-                                    <img src="img/product2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="detail.html">
-                                    <img src="img/product2_2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product2_2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <a href="detail.html" class="invisible">
-                        <img src="img/product2.jpg" alt="" class="img-responsive">
+                        <img src="images/product2.jpg" alt="" class="img-responsive">
                         </a>
                         <div class="text">
                             <h3><a href="detail.html">White Blouse Versace</a></h3>
@@ -233,18 +234,18 @@
                             <div class="flipper">
                                 <div class="front">
                                     <a href="detail.html">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive">
+                                    <img src="images/product1.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="detail.html">
-                                    <img src="img/product1_2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product1_2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <a href="detail.html" class="invisible">
-                        <img src="img/product1.jpg" alt="" class="img-responsive">
+                        <img src="images/product1.jpg" alt="" class="img-responsive">
                         </a>
                         <div class="text">
                             <h3><a href="detail.html">Fur coat</a></h3>
@@ -266,18 +267,18 @@
                             <div class="flipper">
                                 <div class="front">
                                     <a href="detail.html">
-                                    <img src="img/product2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="detail.html">
-                                    <img src="img/product2_2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product2_2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <a href="detail.html" class="invisible">
-                        <img src="img/product2.jpg" alt="" class="img-responsive">
+                        <img src="images/product2.jpg" alt="" class="img-responsive">
                         </a>
                         <div class="text">
                             <h3><a href="detail.html">White Blouse Armani</a></h3>
@@ -308,18 +309,18 @@
                             <div class="flipper">
                                 <div class="front">
                                     <a href="detail.html">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
+                                    <img src="images/product3.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="detail.html">
-                                    <img src="img/product3_2.jpg" alt="" class="img-responsive">
+                                    <img src="images/product3_2.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <a href="detail.html" class="invisible">
-                        <img src="img/product3.jpg" alt="" class="img-responsive">
+                        <img src="images/product3.jpg" alt="" class="img-responsive">
                         </a>
                         <div class="text">
                             <h3><a href="detail.html">Black Blouse Versace</a></h3>
@@ -346,17 +347,17 @@
                 <div id="get-inspired" class="owl-carousel owl-theme">
                     <div class="item">
                         <a href="#">
-                        <img src="img/getinspired1.jpg" alt="Get inspired" class="img-responsive">
+                        <img src="images/getinspired1.jpg" alt="Get inspired" class="img-responsive">
                         </a>
                     </div>
                     <div class="item">
                         <a href="#">
-                        <img src="img/getinspired2.jpg" alt="Get inspired" class="img-responsive">
+                        <img src="images/getinspired2.jpg" alt="Get inspired" class="img-responsive">
                         </a>
                     </div>
                     <div class="item">
                         <a href="#">
-                        <img src="img/getinspired3.jpg" alt="Get inspired" class="img-responsive">
+                        <img src="images/getinspired3.jpg" alt="Get inspired" class="img-responsive">
                         </a>
                     </div>
                 </div>

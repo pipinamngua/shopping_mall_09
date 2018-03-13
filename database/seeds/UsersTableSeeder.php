@@ -30,6 +30,6 @@ class UsersTableSeeder extends Seeder
         ]);
 
         // Create records for customers
-        factory(\App\User::class, 3)->create();
+        factory(\App\Model\User::class, 3)->create();
     }
 }
