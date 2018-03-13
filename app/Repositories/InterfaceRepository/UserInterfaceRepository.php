@@ -15,5 +15,7 @@ interface UserInterfaceRepository
 
     public function delete($id);
 
-    public function register(array $input);
+    public function getUser(array $arr);
+
+    public function getFindOrFail($id);
 }

@@ -2,6 +2,7 @@
 namespace App\Repositories\EloquentRepository;
 
 use App\Repositories\InterfaceRepository\UserInterfaceRepository;
+use Illuminate\Database\Eloquent\Model;
 use App\Model\User;
 
 class UserRepository implements UserInterfaceRepository
@@ -30,12 +31,23 @@ class UserRepository implements UserInterfaceRepository
     {
     }
 
-    public function register()
+    public function updateStatus(array $arr1, array $arr2)
     {
+        return User::where($arr1)->update($arr2);
     }
 
-    public function delete()
+    public function delete($id)
     {
-        return User::destroy();
+        return User::destroy($id);
+    }
+
+    public function getUser(array $arr)
+    {
+        return User::where($arr)->first();
+    }
+
+    public function getFindOrFail($id)
+    {
+        return User::findOrFail($id);
     }
 }
