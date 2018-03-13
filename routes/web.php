@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('customers/index');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('admin-home', function () {
-    return view('admin.master');
-});
+Auth::routes();
+
+Route::get('verify/{email}/{verify_token}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
