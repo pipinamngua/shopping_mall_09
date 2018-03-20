@@ -16,3 +16,15 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('verify/{email}/{verify_token}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
+
+Route::resource('admin/category', 'Admins\CategoryController');
+Route::get('admin/vueCategory', 'Admins\CategoryController@showVueCategory');
+
+Route::get('admin', function(){
+	return view('admin.master');
+});
+
+// Route::get('admin/category', function() {
+// 	return view('admin.categories.categories');
+// });
+

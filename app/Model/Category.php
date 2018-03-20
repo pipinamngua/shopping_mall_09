@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
+    protected $table = 'categories';
     use SoftDeletes;
 
     protected $guarded = ['id'];
@@ -14,17 +15,17 @@ class Category extends Model
     // Belong to
     public function belongToUser()
     {
-        return $this->belongsTo('User::class');
+        return $this->belongsTo(User::class);
     }
 
     // Has many
     public function hasManyCategories()
     {
-        return $this->hasMany('Category::class', 'parent_id');
+        return $this->hasMany(Category::class, 'parent_id');
     }
 
     public function hasManyProducts()
     {
-        return $this->hasMany('Product::class', 'category_id');
+        return $this->hasMany(Product::class, 'category_id');
     }
 }
