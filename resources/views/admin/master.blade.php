@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Admin</title>
         <base href="{{asset('')}}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.7 -->
@@ -29,7 +30,7 @@
             href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
-        <div class="wrapper">
+        <div class="wrapper" >
             {{-- Header --}}
             @include('admin.layouts.header')
             {{-- End header --}}
@@ -40,7 +41,7 @@
             <!-- Content Wrapper. Contains page content -->
             {{-- @yield('content') --}}
             <div class="content-wrapper">
-                <section class="content-header">
+                {{-- <section class="content-header">
                     <h1>
                         Dashboard
                         <small>Version 2.0</small>
@@ -49,7 +50,7 @@
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Dashboard</li>
                     </ol>
-                </section>
+                </section> --}}
                 @yield('content')
             </div>
             <!-- /.content-wrapper -->
@@ -78,6 +79,7 @@
         <script src="library/customers/bower_9/fastclick.js"></script>
         <!-- AdminLTE App -->
         <script src="library/customers/bower_9/adminlte.min.js"></script>
+        <script src="js/app.js"></script>
         <!-- Sparkline -->
         <script src="library/customers/bower_9/jquery.sparkline.min.js"></script>
         <!-- jvectormap  -->

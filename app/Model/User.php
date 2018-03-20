@@ -29,26 +29,26 @@ class User extends Authenticatable
     // Has many
     public function hasManyCategories()
     {
-        return $this->hasMany('Category::class', 'user_id');
+        return $this->hasMany(Category::class, 'user_id');
     }
 
     public function hasManyProducts()
     {
-        return $this->hasMany('Product::class', 'user_id');
+        return $this->hasMany(Product::class, 'user_id');
     }
 
     public function hasManyComments()
     {
-        return $this->hasMany('Comment::class', 'user_id');
+        return $this->hasMany(Comment::class, 'user_id');
     }
 
     public function hasManyRates()
     {
-        return $this->hasMany('Rate::class', 'user_id');
+        return $this->hasMany(Rate::class, 'user_id');
     }
 
     public function hasManyOrders()
     {
-        return $this->hasMany('Order::class', 'user_id');
+        return $this->hasMany(Order::class, 'user_id');
     }
 }
