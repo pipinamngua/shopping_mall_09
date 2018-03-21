@@ -14,6 +14,6 @@ class Size extends Model
     // Has many
     public function hasManyProductAttributes()
     {
-        return $this->hasMany('ProductAttribute::class', 'size_id');
+        return $this->hasMany(ProductAttribute::class, 'size_id');
     }
 }

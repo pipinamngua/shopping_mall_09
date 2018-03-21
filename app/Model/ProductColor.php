@@ -14,17 +14,17 @@ class ProductColor extends Model
     // Belong to
     public function belongToProduct()
     {
-        return $this->belongsTo('Product::class');
+        return $this->belongsTo(Product::class);
     }
 
     public function belongToColor()
     {
-        return $this->belongsTo('Color::class');
+        return $this->belongsTo(Color::class);
     }
 
     // Has many
     public function hasManyImages()
     {
-        return $this->hasMany('Image::class', 'product_color_id');
+        return $this->hasMany(Image::class, 'product_color_id');
     }
 }

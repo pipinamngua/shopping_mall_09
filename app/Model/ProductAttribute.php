@@ -14,22 +14,22 @@ class ProductAttribute extends Model
     // Belong to
     public function belongToProduct()
     {
-        return $this->belongsTo('Product::class');
+        return $this->belongsTo(Product::class);
     }
 
     public function belongToSize()
     {
-        return $this->belongsTo('Size::class');
+        return $this->belongsTo(Size::class);
     }
 
     public function belongToColor()
     {
-        return $this->belongsTo('Color::class');
+        return $this->belongsTo(Color::class);
     }
 
     // Has many
     public function hasManyOrderItems()
     {
-        return $this->hasMany('OrderItem::class', 'product_attribute_id');
+        return $this->hasMany(OrderItem::class, 'product_attribute_id');
     }
 }

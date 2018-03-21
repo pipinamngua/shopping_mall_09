@@ -24,7 +24,13 @@ Route::get('admin', function(){
 	return view('admin.master');
 });
 
-// Route::get('admin/category', function() {
-// 	return view('admin.categories.categories');
-// });
+Route::resource('admin/products', 'Admins\ProductController');
+Route::get('admin/vueProducts', 'Admins\ProductController@showVueProduct');
+
+Route::resource('admin/colors', 'Admins\ColorController');
+Route::get('admin/vueColors', 'Admins\ColorController@showVueColor');
+
+
+Route::resource('admin/sizes', 'Admins\SizeController');
+Route::get('admin/vueSize', 'Admins\SizeController@showVueSize');
 
