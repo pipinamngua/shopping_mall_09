@@ -14,11 +14,11 @@ class Color extends Model
     // Has many
     public function hasManyProductAttributes()
     {
-        return $this->hasMany('ProductAttribute::class', 'color_id');
+        return $this->hasMany(ProductAttribute::class, 'color_id');
     }
 
     public function hasManyProductsColors()
     {
-        return $this->hasMany('ProductColor::class', 'color_id');
+        return $this->hasMany(ProductColor::class, 'color_id');
     }
 }

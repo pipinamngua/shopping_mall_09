@@ -16,12 +16,17 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 import categories from './components/categories/Categories.vue';
+import colors from './components/colors/Colors.vue';
+import sizes from './components/sizes/Sizes.vue';
+
 
 const app = new Vue({
-    el: '#categories',
+    el: '#app',
     components : {
-    	categories
+    	categories,
+    	colors,
+    	sizes
     }
 });
+
