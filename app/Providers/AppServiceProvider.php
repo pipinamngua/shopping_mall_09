@@ -43,5 +43,9 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\InterfaceRepository\ColorInterfaceRepository',
             'App\Repositories\EloquentRepository\ColorRepository'
         );
+        $this->app->bind(
+            'App\Repositories\InterfaceRepository\ProductInterfaceRepository',
+            'App\Repositories\EloquentRepository\ProductRepository'
+        );
     }
 }
