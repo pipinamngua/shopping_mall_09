@@ -28,6 +28,7 @@ class SizeController extends Controller
 
         return response()->json($response);
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -41,6 +42,7 @@ class SizeController extends Controller
 
         return $size;
     }
+
     /**
      * Update the specified resource in storage.
      *

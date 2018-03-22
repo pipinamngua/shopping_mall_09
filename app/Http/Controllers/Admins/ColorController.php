@@ -29,6 +29,7 @@ class ColorController extends Controller
 
         return response()->json($response);
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -42,6 +43,7 @@ class ColorController extends Controller
 
         return $color;
     }
+
     /**
      * Update the specified resource in storage.
      *
