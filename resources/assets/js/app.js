@@ -20,6 +20,7 @@ import categories from './components/categories/Categories.vue';
 import colors from './components/colors/Colors.vue';
 import sizes from './components/sizes/Sizes.vue';
 import products from './components/products/Products.vue';
+import addcolor from './components/products/addColor.vue';
 
 
 const app = new Vue({
@@ -28,7 +29,8 @@ const app = new Vue({
     	categories,
     	colors,
     	sizes,
-    	products
+    	products,
+    	addcolor
     }
 });
 
