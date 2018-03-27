@@ -21,16 +21,16 @@ import colors from './components/colors/Colors.vue';
 import sizes from './components/sizes/Sizes.vue';
 import products from './components/products/Products.vue';
 import addcolor from './components/products/addColor.vue';
+import users from './components/users/Users.vue';
 
 
 const app = new Vue({
     el: '#app',
     components : {
-    	categories,
-    	colors,
-    	sizes,
-    	products,
-    	addcolor
+        categories,
+        colors,
+        sizes,
+        products,
+        users
     }
 });
-

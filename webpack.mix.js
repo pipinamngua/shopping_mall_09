@@ -14,8 +14,8 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
-    mix.copyDirectory('node_modules/bootstrap', 'public/css/admins/bootstrap');
-    mix.copyDirectory('node_modules/font-awesome', 'public/css/admins/font-awesome');
-    mix.copyDirectory('node_modules/jquery', 'public/js/admins/jquery');
-    mix.copyDirectory('resources/assets/images', 'public/images');
-    
+mix.copyDirectory('node_modules/bootstrap', 'public/css/admins/bootstrap');
+mix.copyDirectory('node_modules/font-awesome', 'public/css/admins/font-awesome');
+mix.copyDirectory('node_modules/jquery', 'public/js/admins/jquery');
+mix.copyDirectory('resources/assets/images', 'public/images');
+mix.copyDirectory('node_modules/toastr', 'public/library/customers/toastr');

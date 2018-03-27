@@ -22,7 +22,7 @@ Route::get('admin/vueCategory', 'Admins\CategoryController@showVueCategory')->na
 Route::get('admin/getAllCategory', 'Admins\CategoryController@getAllCategory');
 
 Route::get('admin', function(){
-	return view('admin.master');
+    return view('admin.master');
 });
 
 Route::resource('admin/products', 'Admins\ProductController');
@@ -35,3 +35,10 @@ Route::get('admin/vueColors', 'Admins\ColorController@showVueColor')->name('inde
 Route::resource('admin/sizes', 'Admins\SizeController');
 Route::get('admin/vueSize', 'Admins\SizeController@showVueSize')->name('indexSizes');
 
+Route::middleware('admin')->group(function () {
+    Route::resource('admin-users', 'Admins\UserController');
+    Route::get('admin-list-user', [
+        'as' => 'listuser',
+        'uses' => 'Admins\UserController@getListUser'
+    ]);
+});

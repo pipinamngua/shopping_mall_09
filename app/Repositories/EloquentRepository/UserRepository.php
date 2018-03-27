@@ -29,6 +29,11 @@ class UserRepository implements UserInterfaceRepository
 
     public function update(array $input, $id)
     {
+        $user = User::findOrFail($id);
+        $user->status = $input['status'];
+        $user->save();
+        
+        return $user;
     }
 
     public function updateStatus(array $arr1, array $arr2)
