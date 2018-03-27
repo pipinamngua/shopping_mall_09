@@ -16,11 +16,15 @@
         <link rel="stylesheet" href="library/customers/Ionicons/css/ionicons.min.css">
         <!-- jvectormap -->
         <link rel="stylesheet" href="library/customers/bower_9/jvectormap/jquery-jvectormap.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="library/customers/bower_9/datatables.net-bs/css/dataTables.bootstrap.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="library/customers/bower_9/AdminLTE.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
             folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="library/customers/bower_9/_all-skins.min.css">
+        {{-- Toastr --}}
+        <link rel="stylesheet" href="library/customers/toastr/build/toastr.css">
         @yield('style')
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +43,6 @@
             @include('admin.layouts.sidebar')
             {{-- End Sidebar --}}
             <!-- Content Wrapper. Contains page content -->
-            {{-- @yield('content') --}}
             <div class="content-wrapper">
                 {{-- <section class="content-header">
                     <h1>
@@ -63,12 +66,6 @@
             <!-- Add the sidebar's background. This div must be placed
                 immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
-            {{-- 
-            <canvas id="salesChart" style="height: 180px;"></canvas>
-            --}}
-            {{-- 
-            <canvas id="pieChart" height="150"></canvas>
-            --}}
         </div>
         <!-- ./wrapper -->
         <!-- jQuery 3 -->
@@ -87,12 +84,15 @@
         <script src="library/customers/bower_9/jquery-jvectormap-world-mill-en.js"></script>
         <!-- SlimScroll -->
         <script src="library/customers/bower_9/jquery.slimscroll.min.js"></script>
+        <!-- DataTables -->
+        <script src="library/customers/bower_9/jquery.dataTables.min.js"></script>
+        <script src="library/customers/bower_9/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
         <!-- ChartJS -->
         <script src="library/customers/bower_9/Chart.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        {{-- <script src="js/customers/dashboard2.js"></script> --}}
         <!-- AdminLTE for demo purposes -->
         <script src="library/customers/bower_9/demo.js"></script>
+        {{-- toastr --}}
+        <script src="library/customers/toastr/build/toastr.min.js"></script>
         @yield('script')
     </body>
 </html>
