@@ -35,7 +35,7 @@
         	<span>{{product.status}}</span>
 		</td>
 		<td>
-			<a v-bind:href="url + editForm.id" class="btn btn-primary">{{product.id}}</a>
+			<a v-bind:href="url + editForm.id" class="btn btn-primary">Add Colors</a>
 		</td>
 		<td>
         <button @click="editProduct" type="button" class="btn btn-info" 
@@ -83,7 +83,7 @@ export default {
                 width: '70px',
                 height: '70px'
             },
-            url: 'admin/products/',
+            url: 'admin/products/addColors/',
             categories: []
         };
 

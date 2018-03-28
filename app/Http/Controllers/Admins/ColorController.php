@@ -76,4 +76,9 @@ class ColorController extends Controller
     {
         return view('admin.colors.colors');
     }
+
+    public function getAllColors()
+    {
+        return Color::orderBy('id', 'desc')->get();
+    }
 }

@@ -75,4 +75,9 @@ class SizeController extends Controller
     {
         return view('admin.sizes.sizes');
     }
+
+    public function getAllSizes()
+    {
+        return Size::orderBy('id', 'desc')->get();
+    }
 }
