@@ -31,6 +31,7 @@ const app = new Vue({
         colors,
         sizes,
         products,
-        users
+        users,
+        addcolor
     }
 });

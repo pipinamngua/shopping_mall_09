@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Size extends Model
 {
     use SoftDeletes;
+    protected $table = 'sizes';
 
     protected $guarded = ['id'];
 

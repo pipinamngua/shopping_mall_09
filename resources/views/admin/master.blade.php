@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="library/customers/Ionicons/css/ionicons.min.css">
         <!-- jvectormap -->
         <link rel="stylesheet" href="library/customers/bower_9/jvectormap/jquery-jvectormap.css">
-        <!-- DataTables -->
+
         <link rel="stylesheet" href="library/customers/bower_9/datatables.net-bs/css/dataTables.bootstrap.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="library/customers/bower_9/AdminLTE.min.css">
@@ -88,6 +88,8 @@
         <script src="library/customers/bower_9/jquery.dataTables.min.js"></script>
         <script src="library/customers/bower_9/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
         <!-- ChartJS -->
+        <script src="library/customers/bower_9/jquery.dataTables.min.js"></script>
+        <script src="library/customers/bower_9/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
         <script src="library/customers/bower_9/Chart.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="library/customers/bower_9/demo.js"></script>

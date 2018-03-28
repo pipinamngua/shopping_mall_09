@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProductAttribute extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
+    protected $table = 'product_attributes';
 
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
     // Belong to
     public function belongToProduct()

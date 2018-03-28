@@ -19,7 +19,6 @@ class ProductController extends Controller
         $this->productRepository = $productRepository;
     }
 
-
     public function showVueProduct()
     {
         return view('admin.products.products');
@@ -30,6 +29,16 @@ class ProductController extends Controller
         $product = $this->productRepository->getAllProduct();
 
         return $product;
+    }
+
+    public function show($id)
+    {
+        return view('admin/products/detailProduct', compact('id'));
+    }
+
+    public function addColor($id)
+    {
+        return view('admin/products/productAttributes', compact('id'));
     }
 
 

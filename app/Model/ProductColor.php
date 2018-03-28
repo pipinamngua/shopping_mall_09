@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProductColor extends Model
 {
     use SoftDeletes;
+    protected $table = 'products_colors';
 
     protected $guarded = ['id'];
 

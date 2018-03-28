@@ -27,13 +27,22 @@ Route::get('admin', function(){
 
 Route::resource('admin/products', 'Admins\ProductController');
 Route::get('admin/vueProducts', 'Admins\ProductController@showVueProduct')->name('indexProducts');
+Route::get('admin/products/addColors/{id}', 'Admins\ProductController@addColor');
 
 Route::resource('admin/colors', 'Admins\ColorController');
 Route::get('admin/vueColors', 'Admins\ColorController@showVueColor')->name('indexColors');
+Route::get('admin/getAllColors', 'Admins\ColorController@getAllColors');
 
 
 Route::resource('admin/sizes', 'Admins\SizeController');
 Route::get('admin/vueSize', 'Admins\SizeController@showVueSize')->name('indexSizes');
+Route::get('admin/getAllSizes', 'Admins\SizeController@getAllSizes');
+
+
+Route::resource('admin/productAttributes', 'Admins\ProductAtributesController');
+Route::get('admin/productAttributes/{id}/{color_id}', 'Admins\ProductAtributesController@getColorImages');
+Route::post('admin/productAttributes/{id}/{color_id}', 'Admins\ProductAtributesController@delete');
+
 
 Route::middleware('admin')->group(function () {
     Route::resource('admin-users', 'Admins\UserController');
