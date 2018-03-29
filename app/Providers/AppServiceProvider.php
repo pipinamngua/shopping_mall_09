@@ -9,14 +9,17 @@ use App\Repositories\EloquentRepository\ProductDetailRepository;
 use App\Repositories\InterfaceRepository\UserInterfaceRepository;
 use App\Repositories\EloquentRepository\UserRepository;
 use App\Repositories\InterfaceRepository\CategoryInterfaceRepository;
-use App\Repositories\EloquentRepository\CategoryRepository
+use App\Repositories\EloquentRepository\CategoryRepository;
 use App\Repositories\InterfaceRepository\SizeInterfaceRepository;
 use App\Repositories\EloquentRepository\SizeRepository;
 use App\Repositories\InterfaceRepository\ColorInterfaceRepository;
 use App\Repositories\EloquentRepository\ColorRepository;
 use App\Repositories\InterfaceRepository\ProductInterfaceRepository;
 use App\Repositories\EloquentRepository\ProductRepository;
-
+use App\Repositories\EloquentRepository\DiscountProductRepository;
+use App\Repositories\InterfaceRepository\DiscountProductInterface;
+use App\Repositories\EloquentRepository\DiscountProgramRepository;
+use App\Repositories\InterfaceRepository\DiscountProgramInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -43,5 +46,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ColorInterfaceRepository::class, ColorRepository::class);
         $this->app->bind(ProductInterfaceRepository::class, ProductRepository::class);
         $this->app->bind(ProductDetailInterfaceRepository::class, ProductDetailRepository::class);
+        $this->app->bind(DiscountProductInterface::class, DiscountProductRepository::class);
+        $this->app->bind(DiscountProgramInterface::class, DiscountProgramRepository::class);
     }
 }

@@ -22,6 +22,8 @@ import sizes from './components/sizes/Sizes.vue';
 import products from './components/products/Products.vue';
 import addcolor from './components/products/addColor.vue';
 import users from './components/users/Users.vue';
+import discountprogram from './components/discountPrograms/DiscountProgram.vue';
+import discountproducts from './components/discountProducts/discountProducts.vue';
 
 
 const app = new Vue({
@@ -32,6 +34,8 @@ const app = new Vue({
         sizes,
         products,
         users,
-        addcolor
+        addcolor,
+        discountprogram,
+        discountproducts
     }
 });

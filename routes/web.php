@@ -43,6 +43,14 @@ Route::resource('admin/productAttributes', 'Admins\ProductAtributesController');
 Route::get('admin/productAttributes/{id}/{color_id}', 'Admins\ProductAtributesController@getColorImages');
 Route::post('admin/productAttributes/{id}/{color_id}', 'Admins\ProductAtributesController@delete');
 
+Route::resource('admin/discountProgram', 'Admins\DiscountProgramController');
+Route::get('admin/vueDiscountProgram', 'Admins\DiscountProgramController@showVueDiscountProgram');
+
+Route::resource('admin/discountProduct', 'Admins\DiscountProduct');
+Route::get('admin/vueDiscountProduct', 'Admins\DiscountProduct@showVueDiscountProduct');
+Route::get('admin/getAllProduct', 'Admins\DiscountProduct@getAllProduct');
+Route::get('admin/getAllDiscountProgram', 'Admins\DiscountProduct@getAllDiscountProgram');
+
 
 Route::middleware('admin')->group(function () {
     Route::resource('admin-users', 'Admins\UserController');

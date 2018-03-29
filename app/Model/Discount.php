@@ -7,18 +7,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Discount extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
+    protected $table = 'discounts';
 
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
     // Belong to
     public function belongToProduct()
     {
-        return $this->belongsTo('Product::class');
+        return $this->belongsTo(Product::class);
     }
 
     public function belongToDiscountProgram()
     {
-        return $this->belongsTo('Product::class');
+        return $this->belongsTo(Product::class);
     }
 }
