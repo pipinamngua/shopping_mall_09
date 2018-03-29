@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class DiscountProgram extends Model
 {
     use SoftDeletes;
-
-    protected $guarded = ['id'];
+    protected $table = 'discount_program';
 
     // Has many
     public function hasManyDiscounts()
     {
-        return $this->hasMany('Discount::class', 'discount_program_id');
+        return $this->hasMany(Discount::class, 'discount_program_id');
     }
 }
