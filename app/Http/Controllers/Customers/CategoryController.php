@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Customers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Model\Category;
 use App\Repositories\InterfaceRepository\CategoryInterfaceRepository;
 
-class HomeController extends Controller
+class CategoryController extends Controller
 {
     protected $categoryRepository;
 
@@ -14,19 +15,11 @@ class HomeController extends Controller
     {
         $this->categoryRepository = $categoryRepository;
     }
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function getIndex()
     {
-        return view('customers.index');
+        $categories = $this->categoryRepository->all();
+
+        return response()->json(['categories' => $categories]);
     }
 }

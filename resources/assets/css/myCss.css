@@ -1,0 +1,65 @@
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#app .navbar .container #main-menu #navigation li {
+    list-style: none;
+    position: relative;
+}
+
+#app .navbar .container #main-menu #navigation > ul > li > a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 40px;
+    display: block;
+    padding: 0px 20px;
+}
+
+#app .navbar .container #main-menu #navigation ul li a:hover {
+    background: #4fbfa8;
+
+}
+
+#app .navbar .container #main-menu #navigation > ul {
+    background: gray;
+    width: 200px;
+    display: none;
+    position: absolute;
+}
+
+#app .navbar .container #main-menu #navigation > ul > li > ul a {
+    display: block;
+    line-height: 100px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    text-indent: 15px;
+    height: 50px;
+}
+
+#app .navbar .container #main-menu #navigation li:hover > ul {
+    display: block;
+}
+
+#app .navbar .container #main-menu #navigation ul li > ul {
+    background: #fff;
+    width: 200px;
+    display: none;
+    position: absolute;
+}
+
+#app .navbar .container #main-menu #navigation ul > li > ul > li >ul {
+    left: 200px;
+    top: 0px;
+}
+
+#app .navbar .container #main-menu #navigation ul > li > ul > li > a {
+    height: 50px;
+    display: block; !important;
+    padding-left: 15px;
+    padding-top: 7px;
+    color: gray;
+    text-decoration: none;
+    font-weight: bold;
+}

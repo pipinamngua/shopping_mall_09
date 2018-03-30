@@ -47,4 +47,9 @@ class CategoryRepository implements CategoryInterfaceRepository
     {
         return Category::destroy($id);
     }
+
+    public function getAll()
+    {
+        return Category::select('id', 'category_name', 'slug', 'parent_id')->get();
+    }
 }

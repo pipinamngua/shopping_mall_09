@@ -122,8 +122,9 @@
 <!-- *** COPYRIGHT END *** -->
 </div>
 <!-- /#all -->
-@yield('javascript')
 <!-- *** SCRIPTS TO INCLUDE ***
     _________________________________________________________ -->
+</div>
+@yield('javascript')
 </body>
 </html>
