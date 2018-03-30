@@ -20,6 +20,7 @@ use App\Repositories\EloquentRepository\DiscountProductRepository;
 use App\Repositories\InterfaceRepository\DiscountProductInterface;
 use App\Repositories\EloquentRepository\DiscountProgramRepository;
 use App\Repositories\InterfaceRepository\DiscountProgramInterface;
+use App\Model\Category;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        view()->composer(['customers.partials.header'], function($view){
+            $categories = Category::select('id', 'category_name', 'slug', 'parent_id')
+                            ->get()
+                            ->toArray();
+            $view->with([
+                'categories' => $categories
+            ]);
+        });
     }
 
     /**

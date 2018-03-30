@@ -8,7 +8,6 @@
 require('./bootstrap');
 var Vue = require('vue');
 Vue.use(require('vue-resource'));
-
 window.Vue = require('vue');
 
 /**
@@ -24,7 +23,6 @@ import addcolor from './components/products/addColor.vue';
 import users from './components/users/Users.vue';
 import discountprogram from './components/discountPrograms/DiscountProgram.vue';
 import discountproducts from './components/discountProducts/discountProducts.vue';
-
 
 const app = new Vue({
     el: '#app',
