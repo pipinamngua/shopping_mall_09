@@ -5,6 +5,9 @@ use App\Repositories\InterfaceRepository\ProductInterfaceRepository;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\Helpers;
 use App\Model\Product;
+use App\Model\ProductColor;
+use App\Model\ProductAttribute;
+use App\Model\Images;
 use Auth;
 
 class ProductRepository implements ProductInterfaceRepository
@@ -74,5 +77,118 @@ class ProductRepository implements ProductInterfaceRepository
     public function destroy($id)
     {
         return Product::destroy($id);
+    }
+
+    public function getLatestProduct()
+    {
+        $lastest = DB::table('products')
+                ->leftJoin('discounts', 'products.id', '=', 'discounts.product_id')
+                ->leftJoin('discount_program', 'discounts.discount_program_id', '=', 'discount_program.id')
+                ->select(
+                    'products.*',
+                    'discounts.discount_percent',
+                    'discount_program.discount_content',
+                    'discount_program.started_at',
+                    'discount_program.ended_at'
+                )
+                ->where([
+                    'products.status' => 1,
+                    'products.deleted_at' => null,
+                ])
+                ->orderBy('id', 'desc')
+                ->take(8)->get();
+
+        return $lastest;
+    }
+
+    public function getAllDiscountProduct()
+    {
+        $allProduct = DB::table('products')
+                ->leftJoin('discounts', 'products.id', '=', 'discounts.product_id')
+                ->leftJoin('discount_program', 'discounts.discount_program_id', '=', 'discount_program.id')
+                ->select(
+                    'products.*',
+                    'discounts.discount_percent',
+                    'discount_program.discount_content',
+                    'discount_program.started_at',
+                    'discount_program.ended_at'
+                )
+                ->where([
+                    'products.status' => 1,
+                    'products.deleted_at' => null,
+                ])
+                ->orderBy('id', 'desc')
+                ->get();
+
+        return $allProduct;
+    }
+
+    public function getDiscount($id)
+    {
+        $productDiscount = DB::table('products')
+                ->leftJoin('discounts', 'products.id', '=', 'discounts.product_id')
+                ->leftJoin('discount_program', 'discounts.discount_program_id', '=', 'discount_program.id')
+                ->select(
+                    'products.*',
+                    'discounts.discount_percent',
+                    'discount_program.discount_content',
+                    'discount_program.started_at',
+                    'discount_program.ended_at'
+                )
+                ->where([
+                    'products.status' => 1,
+                    'products.deleted_at' => null,
+                    'products.id' => $id,
+                ])
+                ->first();
+
+        return $productDiscount;
+    }
+
+    public function getAttribute($id)
+    {
+        $productAttribute = DB::table('product_attributes')
+                            ->join('colors', 'product_attributes.color_id', 'colors.id')
+                            ->select('product_attributes.*', 'colors.color_name')
+                            ->where(['product_attributes.product_id' => $id])
+                            ->get();
+
+        return $productAttribute;
+    }
+    
+    public function getColor($id, $colorId)
+    {
+        $productColors = ProductColor::where([
+            'color_id' => $colorId,
+            'product_id' => $id,
+        ])->first();
+
+        $images = Images::where(['product_color_id' => $productColors->id])->get();
+
+        return $images;
+    }
+
+    public function relatedProduct($id)
+    {
+        $product = Product::find($id);
+        $relatedProduct = DB::table('products')
+                ->leftJoin('discounts', 'products.id', '=', 'discounts.product_id')
+                ->leftJoin('discount_program', 'discounts.discount_program_id', '=', 'discount_program.id')
+                ->select(
+                    'products.*',
+                    'discounts.discount_percent',
+                    'discount_program.discount_content',
+                    'discount_program.started_at',
+                    'discount_program.ended_at'
+                )
+                ->where([
+                    'products.status' => 1,
+                    'products.deleted_at' => null,
+                    'products.category_id' => $product->category_id,
+                ])
+                ->orderBy('id', 'desc')
+                ->take(8)->get();
+
+        return $relatedProduct;
     }
 }

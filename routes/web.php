@@ -59,3 +59,11 @@ Route::middleware('admin')->group(function () {
         'uses' => 'Admins\UserController@getListUser'
     ]);
 });
+
+Route::resource('customer/products','Customers\ProductController');
+Route::get('customer/latest', 'Customers\ProductController@getLatestProduct');
+Route::get('customer/All', 'Customers\ProductController@getAllProduct');
+Route::get('customer/getDiscount/{id}', 'Customers\ProductController@getDiscount');
+Route::get('customer/getAttribute/{id}', 'Customers\ProductController@getAttribute');
+Route::get('customer/getColor/{id}/{colorId}', 'Customers\ProductController@getColor');
+Route::get('customer/getRelatedProduct/{id}', 'Customers\ProductController@relatedProduct');

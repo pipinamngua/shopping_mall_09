@@ -2,7 +2,10 @@ ul {
     margin: 0px;
     padding: 0px;
 }
-
+.btn_color_img{
+    width: 80px,
+    height: 40px,
+}
 #app .navbar .container #main-menu #navigation li {
     list-style: none;
     position: relative;
