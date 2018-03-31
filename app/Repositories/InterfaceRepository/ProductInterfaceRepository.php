@@ -10,4 +10,16 @@ interface ProductInterfaceRepository
     public function update(array $input, $id);
 
     public function destroy($id);
+
+    public function getLatestProduct();
+
+    public function getAllDiscountProduct();
+
+    public function getDiscount($id);
+
+    public function getAttribute($id);
+
+    public function getColor($id, $colorId);
+
+    public function relatedProduct($id);
 }

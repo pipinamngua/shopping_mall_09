@@ -23,6 +23,9 @@ import addcolor from './components/products/addColor.vue';
 import users from './components/users/Users.vue';
 import discountprogram from './components/discountPrograms/DiscountProgram.vue';
 import discountproducts from './components/discountProducts/discountProducts.vue';
+import hotproduct from './components/products/hotProduct.vue';
+import allproduct from './components/products/allProduct.vue';
+import detailproduct from './components/products/DetailProduct.vue';
 
 const app = new Vue({
     el: '#app',
@@ -34,6 +37,9 @@ const app = new Vue({
         users,
         addcolor,
         discountprogram,
-        discountproducts
+        discountproducts,
+        hotproduct,
+        allproduct,
+        detailproduct
     }
 });
