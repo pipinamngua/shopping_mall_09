@@ -32,21 +32,32 @@ class ColorRepository implements ColorInterfaceRepository
 
     public function store(array $input)
     {
-        $color = new Color();
-        $color->color_name = $input['color_name'];
-        $color->save();
+        $check = Color::where(['color_name' => $input['color_name']])->get();
+        if (!count($check)) {
+            $color = new Color();
+            $color->color_name = $input['color_name'];
+            $color->save();
 
-        return $color;
+            return response()->json(['color' => $color]);
+        } else {
+            return response()->json(['fail' => 'the color is already exists']);
+        }
+        
     }
 
     public function update(array $input, $id)
     {
-        $color = Color::findOrFail($id);
-        $color->update([
+        $color = Color::find($id);
+        $check = Color::where(['color_name' => $input['color_name']])->get();
+        if (count($check)) {
+            return response()->json(['fail' => 'can not update, the name is already exists']);
+        } else {
+            $color->update([
             'color_name' => $input['color_name'],
-        ]);
-        
-        return $color;
+            ]);
+            
+            return response()->json(['color' => $color]);
+        }
     }
 
     public function destroy($id)

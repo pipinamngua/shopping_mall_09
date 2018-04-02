@@ -16,8 +16,11 @@ class ProductDetailRepository implements ProductDetailInterfaceRepository
 {
     public function store(array $input)
     {
-        $checkProductAttribute = ProductAttribute::where('color_id', '=', $input['color_id'])->first();
-        if ($checkProductAttribute) {
+        $checkProductAttribute = ProductAttribute::where([
+            'color_id' => $input['color_id'],
+            'product_id' => $input['product_id'],
+        ])->get();
+        if (count($checkProductAttribute)) {
             return response()->json(['fail' => 'the item is already exits']);
         } else {
             $productColor = new ProductColor();

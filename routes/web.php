@@ -44,10 +44,10 @@ Route::get('admin/productAttributes/{id}/{color_id}', 'Admins\ProductAtributesCo
 Route::post('admin/productAttributes/{id}/{color_id}', 'Admins\ProductAtributesController@delete');
 
 Route::resource('admin/discountProgram', 'Admins\DiscountProgramController');
-Route::get('admin/vueDiscountProgram', 'Admins\DiscountProgramController@showVueDiscountProgram');
+Route::get('admin/vueDiscountProgram', 'Admins\DiscountProgramController@showVueDiscountProgram')->name('discountProgram');
 
 Route::resource('admin/discountProduct', 'Admins\DiscountProduct');
-Route::get('admin/vueDiscountProduct', 'Admins\DiscountProduct@showVueDiscountProduct');
+Route::get('admin/vueDiscountProduct', 'Admins\DiscountProduct@showVueDiscountProduct')->name('discount');
 Route::get('admin/getAllProduct', 'Admins\DiscountProduct@getAllProduct');
 Route::get('admin/getAllDiscountProgram', 'Admins\DiscountProduct@getAllDiscountProgram');
 

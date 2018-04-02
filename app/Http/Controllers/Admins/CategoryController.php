@@ -59,11 +59,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = $this->categoryRepository->find($id);
         $input = $request->only('category_name', 'parent_id');
         $update = $this->categoryRepository->update($input, $id);
 
-        return response()->json(['message' => 'updated successfully', 'category' => $category]);
+        return $update;
     }
 
     /**

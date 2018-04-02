@@ -32,18 +32,27 @@ class ProductRepository implements ProductInterfaceRepository
 
     public function store(array $input)
     {
-        $fileName = Helpers::getImage($input['image']);
-        $product = new Product();
-        $product->product_name = $input['product_name'];
-        $product->description = $input['description'];
-        $product->original_price = $input['original_price'];
-        $product->status = $input['status'];
-        $product->category_id = $input['category'];
-        $product->user_id = Auth::user()->id;
-        $product->image_path = $fileName;
-        $product->save();
+        $check = Product::where([
+            'product_name' => $input['product_name'],
+            'category_id' => $input['category'],
+        ])->get();
+        if (!count($check)) {
+            $fileName = Helpers::getImage($input['image']);
+            $product = new Product();
+            $product->product_name = $input['product_name'];
+            $product->description = $input['description'];
+            $product->original_price = $input['original_price'];
+            $product->status = $input['status'];
+            $product->category_id = $input['category'];
+            $product->user_id = Auth::user()->id;
+            $product->image_path = $fileName;
+            $product->save();
 
-        return $product;
+            return response()->json(['product' => $product]);
+        } else {
+            return response()->json(['fail' => 'the product is already exits']);
+        }
+        
     }
 
     public function update(array $input, $id)
@@ -71,7 +80,7 @@ class ProductRepository implements ProductInterfaceRepository
             ]);
         }
 
-        return $product;
+        return response()->json(['product' => $product]);
     }
 
     public function destroy($id)
@@ -98,7 +107,7 @@ class ProductRepository implements ProductInterfaceRepository
                 ->orderBy('id', 'desc')
                 ->take(8)->get();
 
-        return $lastest;
+        return response()->json(['lastest' => $lastest]);
     }
 
     public function getAllDiscountProduct()
@@ -120,7 +129,7 @@ class ProductRepository implements ProductInterfaceRepository
                 ->orderBy('id', 'desc')
                 ->get();
 
-        return $allProduct;
+        return response()->json(['allProducts' => $allProduct]);
     }
 
     public function getDiscount($id)

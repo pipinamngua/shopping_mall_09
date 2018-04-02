@@ -34,14 +34,16 @@
                     </p>
                     <p class="price">
                         <del>${{productDiscounts.original_price}}</del> 
-                        ${{productDiscounts.original_price - 
-                        (productDiscounts.original_price*productDiscounts.discount_percent)/100 }}
+                        ${{productDiscounts.original_price -(productDiscounts.original_price*productDiscounts.discount_percent)/100 }}
                     </p>
                     <p class="text-center buttons">
-                        <a href="basket.html" class="btn btn-primary"><
-                            i class="fa fa-shopping-cart"></i> Add to cart
+                        <a href="basket.html" class="btn btn-primary">
+                            <i class="fa fa-shopping-cart"></i> Add to cart
                         </a> 
-                        <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
+                        <a href="basket.html" class="btn btn-default">
+                            <i class="fa fa-heart"></i> 
+                            Add to wishlist
+                        </a>
                     </p>
                 </div>
                 <div class="box" v-else>
@@ -57,7 +59,10 @@
                         ${{productDiscounts.original_price}}
                     </p>
                     <p class="text-center buttons">
-                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
+                        <a href="basket.html" class="btn btn-primary">
+                            <i class="fa fa-shopping-cart"></i>
+                             Add to cart
+                        </a> 
                         <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
                     </p>
                 </div>
@@ -157,8 +162,8 @@
                     <h3>{{relatedProduct.product_name}}</h3>
                     <p class="price">
                         <del>${{relatedProduct.original_price}}</del> 
-                        ${{relatedProduct.original_price - 
-                        (relatedProduct.original_price*relatedProduct.discount_percent)/100 }}
+                        $
+                        {{relatedProduct.original_price - (relatedProduct.original_price*relatedProduct.discount_percent)/100 }}
                     </p>
                 </div>
                 <div class="ribbon sale">
@@ -204,6 +209,7 @@
             getDiscount(){
                 axios.get('/customer/getDiscount/' + this.productId)
                 .then(response => {
+                    console.log(response)
                     this.productDiscounts = response.data.productDiscount;
                 })
                 .catch(error=>{
@@ -235,7 +241,6 @@
                 axios.get('/customer/getRelatedProduct/'+this.productId)
                 .then(response => {
                     this.relatedProducts = response.data.relatedProduct;
-                    console.log(this.relatedProducts);
                 })
                 .catch(error=>{
                     console.log(error);

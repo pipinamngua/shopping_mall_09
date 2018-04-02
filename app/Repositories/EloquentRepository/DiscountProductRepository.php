@@ -21,9 +21,10 @@ class DiscountProductRepository implements DiscountProductInterface
                             'discount_program.ended_at',
                             'discount_program.discount_content'
                         )
+                        ->orderBy('id', 'desc')
                         ->get();
 
-        return $getAllDiscount;
+        return response()->json(['getAllDiscount' => $getAllDiscount]);
     }
 
     public function store(array $input)
@@ -45,7 +46,7 @@ class DiscountProductRepository implements DiscountProductInterface
             $discount->save();
         }
 
-        return $discount;
+        return response()->json(['discount' => $discount]);
     }
 
     public function update(array $input, $id)
@@ -76,13 +77,13 @@ class DiscountProductRepository implements DiscountProductInterface
     {
         $product = Product::orderBy('id', 'desc')->get();
 
-        return $product;
+        return response()->json(['product' => $product]);
     }
 
     public function getAllDiscountProgram()
     {
         $discountProgram = DiscountProgram::where('status', '=', 1)->orderBy('id', 'desc')->get();
 
-        return $discountProgram;
+        return response()->json(['discountProgram' => $discountProgram]);
     }
 }

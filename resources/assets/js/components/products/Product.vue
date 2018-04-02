@@ -123,6 +123,7 @@ export default {
         updateProduct(oldProduct, newProduct) {
             axios.patch("admin/products/" + oldProduct.id, newProduct).then(response => {
                 this.$emit('update-product');
+                toastr.success('successfully');
                 this.cancelProduct();
             })
         },

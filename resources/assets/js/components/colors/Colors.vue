@@ -129,18 +129,22 @@ export default {
 
         createColor() {
             axios.post('admin/colors/', this.item).then(response => {
-                // console.log(response.data);
-                // this.items.push(response.data);
-                this.items.unshift(response.data);
-                this.item = {
-                    color_name: '',
-                    id: '',
-                    created_at: '',
-                    updated_at: ''
+                if (response.data.fail) {
+                    toastr.warning(response.data.fail);
+                } else {
+                    this.items.unshift(response.data.color);
+                    toastr.success('successfully');
+                    this.item = {
+                        color_name: '',
+                        id: '',
+                        created_at: '',
+                        updated_at: ''
+                    }
+                    if (this.errors) {
+                        this.errors = [];
+                    }
                 }
-                if (this.errors) {
-                    this.errors = [];
-                }
+                
             }, response => {
                 this.errors = response.data.errors;
             });
@@ -150,7 +154,6 @@ export default {
                 let index = this.items.indexOf(item);
                 if (confirm('do you really want to delete this category?')) {
                     this.items.splice(index, 1);
-                    console.log(response.data);
                 }
 
             })

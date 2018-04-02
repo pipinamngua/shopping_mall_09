@@ -23,24 +23,40 @@ class CategoryRepository implements CategoryInterfaceRepository
     public function store(array $input)
     {
         $category = new Category();
-        $category->category_name = $input['category_name'];
-        $category->parent_id = $input['parent_id'];
-        $category->user_id = Auth::user()->id;
-        $category->save();
+        $check = Category::where([
+            'category_name' => $input['category_name'],
+            'parent_id' => $input['parent_id']
+        ])->get();
+        if (count($check)) {
+            return response()->json(['fail' => 'the category is already exists.Please choose another name!']);
+        } else {
+            $category->category_name = $input['category_name'];
+            $category->parent_id = $input['parent_id'];
+            $category->user_id = Auth::user()->id;
+            $category->save();
 
-        return $category;
+            return response()->json(['category' => $category]);
+        }
     }
 
     public function update(array $input, $id)
     {
         $category = Category::findOrFail($id);
-        $category->update([
+        $check = Category::where([
             'category_name' => $input['category_name'],
-            'parent_id' => $input['parent_id'],
-            'user_id' => Auth::user()->id,
-        ]);
-        
-        return $category;
+            'parent_id' => $input['parent_id']
+        ])->get();
+        if (count($check)) {
+            return response()->json(['fail' => 'can not updated, the category is already exists']);
+        } else {
+            $category->update([
+                'category_name' => $input['category_name'],
+                'parent_id' => $input['parent_id'],
+                'user_id' => Auth::user()->id,
+            ]);
+            
+            return $category;
+        }
     }
 
     public function destroy($id)
