@@ -200,4 +200,12 @@ class ProductRepository implements ProductInterfaceRepository
 
         return $relatedProduct;
     }
+
+    public function getProductByCategory($id)
+    {
+        $products = Product::where('category_id', '=', $id)
+                    ->orderBy('id', 'desc')->get();
+
+        return $products;
+    }
 }

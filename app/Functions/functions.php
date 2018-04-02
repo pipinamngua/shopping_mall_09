@@ -4,7 +4,7 @@
         echo '<ul>';
         foreach ($categories as $item) {
             if ($item['parent_id'] == $id) {
-                echo '<li> <a href="/"> ' . $item['category_name'] . ' </a>';
+                echo '<li> <a href="category/' . $item['id'] . '"> ' . $item['category_name'] . ' </a>';
                 subMenu($categories, $item['id']);
                 echo '</li>';
             }

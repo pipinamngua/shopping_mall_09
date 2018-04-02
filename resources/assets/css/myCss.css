@@ -58,11 +58,15 @@ ul {
 }
 
 #app .navbar .container #main-menu #navigation ul > li > ul > li > a {
-    height: 50px;
+    height: 32px;
     display: block; !important;
     padding-left: 15px;
     padding-top: 7px;
     color: gray;
     text-decoration: none;
     font-weight: bold;
+}
+
+ul {
+    z-index: 99;
 }

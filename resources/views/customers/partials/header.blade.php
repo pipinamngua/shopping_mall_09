@@ -23,6 +23,7 @@
     <link href="{{ asset('library/customers/bower_shopping_mall/customers/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('library/customers/bower_shopping_mall/customers/owl.theme.css') }}" rel="stylesheet">
     <link href="{{ asset('library/customers/bower_shopping_mall/customers/style.default.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('library/customers/toastr/build/toastr.css') }}">
     <link href="{{ asset('css/myCss.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png">
 </head>
@@ -87,9 +88,9 @@
                     <span class="sr-only">Toggle search</span>
                     <i class="fa fa-search"></i>
                     </button>
-                    <a class="btn btn-default navbar-toggle" href="basket.html">
-                    <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
-                    </a>
+                    {{-- <a class="btn btn-default navbar-toggle" href="basket.html">
+                    <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs home_count_cart">3 items in cart</span>
+                    </a> --}}
                 </div>
             </div>
 
@@ -102,7 +103,7 @@
                             @foreach($categories as $category)
                                 @if($category['parent_id'] == null)
                                 <li class="dropdown">
-                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"> {{ $category['category_name'] }} <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"> {{ $category['category_name'] }} <b class="caret"></b></a>
                                     @php
                                         subMenu($categories, $category['id']);
                                     @endphp
@@ -117,9 +118,9 @@
             <!--/.nav-collapse -->
             <div class="navbar-buttons">
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn">
+                    <a href="{{ route('showcart') }}" class="btn btn-primary navbar-btn">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="hidden-sm">3 items in cart</span>
+                        <span class="hidden-sm home_count_cart">(empty)</span>{{-- 3 items in cart --}}
                     </a>
                 </div>
                 <!--/.nav-collapse -->
