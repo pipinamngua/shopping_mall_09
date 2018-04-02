@@ -30,7 +30,6 @@
                     <th>STT</th>
                     <th>Categories</th>
                     <th>Parent Categories</th>
-                    <th>Users</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
@@ -75,16 +74,22 @@ export default {
         },
         createCategory() {
             axios.post('admin/category/', this.category).then(response => {
-                this.categories.push(response.data);
-                this.category = {
-                    category_name: '',
-                    user_id: '',
-                    parent_id: '',
-                    id: ''
+                if (response.data.fail) {
+                    toastr.warning(response.data.fail);
+                } else {
+                    this.categories.unshift(response.data.category);
+                    toastr.success('successfully');
+                    this.category = {
+                        category_name: '',
+                        user_id: '',
+                        parent_id: '',
+                        id: ''
+                    }
+                    if (this.errors) {
+                        this.errors = [];
+                    }
                 }
-                if (this.errors) {
-                    this.errors = [];
-                }
+                
             }, response => {
                 this.errors = response.data.errors;
             });

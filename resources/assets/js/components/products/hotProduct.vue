@@ -27,11 +27,11 @@
                             </div>
                         </div>
                     </div>
-                    <a href="detail.html" class="invisible">
+                    <a :href="route+product.id" class="invisible">
                     <img :src="image + product.image_path" alt="" class="img-responsive">
                     </a>
                     <div class="text">
-                        <h3><a href="detail.html">{{ product.product_name }}</a></h3>
+                        <h3><a :href="route+product.id">{{ product.product_name }}</a></h3>
                         <p class="price">${{ product.original_price }}</p>
                     </div>
                     <!-- /.text -->
@@ -41,12 +41,12 @@
                     <div class="flip-container">
                         <div class="flipper">
                             <div class="front">
-                                <a href="detail.html">
+                                <a :href="route+product.id">
                                 <img :src="image + product.image_path" alt="" class="img-responsive">
                                 </a>
                             </div>
                             <div class="back">
-                                <a href="detail.html">
+                                <a :href="route+product.id">
                                 <img :src="image + product.image_path" alt="" class="img-responsive">
                                 </a>
                             </div>
@@ -57,7 +57,10 @@
                     </a>
                     <div class="text">
                         <h3><a :href="route+product.id">{{ product.product_name }}</a></h3>
-                        <p class="price"><del>$ {{ product.original_price }}</del> ${{product.original_price - (product.original_price*product.discount_percent)/100 }}</p>
+                        <p class="price">
+                            <del>$ {{ product.original_price }}</del> 
+                        ${{product.original_price - (product.original_price*product.discount_percent)/100 }}
+                        </p>
                     </div>
                     <!-- /.text -->
                     <div class="ribbon sale">
@@ -107,7 +110,7 @@
             getLatestProduct(){
                 axios.get('customer/latest')
                 .then(response => {
-                    this.products= response.data;
+                    this.products= response.data.lastest;
                 })
                 .catch(error => {
                     console.log(error);

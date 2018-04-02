@@ -6,20 +6,22 @@
         {{ category.id }}
     </td>
     <td>
-        <input type="text" v-model="editForm.category_name" class="form-control" v-if="edit">
+        <input type="text" v-model="editForm.category_name" 
+        @keyup.enter="updateCategory(category, editForm)" 
+        class="form-control" v-if="edit">
         <span>{{ category.category_name }}</span>
     </td>
     <td>
-        <select v-model="editForm.parent_id" v-if="edit" class="form-control">
+        <select v-model="editForm.parent_id" 
+        v-if="edit" 
+        @keyup.enter="updateCategory(category, editForm)" 
+        class="form-control">
             <option v-for="cate in categories" 
                     v-bind:value="cate.id"  
                     v-text="cate.category_name"> 
             </option>
         </select>
         <span v-else>{{ category.parent_id }}</span>
-    </td>
-    <td>
-        {{ category.user_id }}
     </td>
     <td>
         <button @click="editCategory" type="button" class="btn btn-info" 
@@ -79,9 +81,13 @@ export default {
 
         updateCategory(oldCategory, newCategory) {
             axios.patch("admin/category/" + oldCategory.id, newCategory).then(response => {
-                this.$emit('update-category');
-                this.cancelCategory();
-                console.log(response.data);
+                if (response.data.fail) {
+                    toastr.warning(response.data.fail);
+                } else {
+                    this.$emit('update-category');
+                    toastr.success('successfully');
+                    this.cancelCategory();
+                }
             })
         },
         deleteCategory(oldCategory, newCategory) {

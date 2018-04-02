@@ -32,7 +32,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Program Name</th>
+                <th>Product Name</th>
                 <th>Discount Program</th>
                 <th>Percentage</th>
                 <th>Started_at</th>
@@ -53,7 +53,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <strong>Program Name : </strong>
+                                            <strong>Product Name : </strong>
                                             <select  v-model="editDiscountProduct.productName">
                                                 <option 
                                                     v-for="product in products" 
@@ -149,7 +149,7 @@
             getAlldiscountProduct() {
                 axios.get('admin/discountProduct')
                 .then(response =>{
-                    this.discountProducts = response.data;
+                    this.discountProducts = response.data.getAllDiscount;
                 })
                 .catch(error=>{
                     console.log(error);
@@ -187,7 +187,7 @@
             getAllProduct(){
                 axios.get('admin/getAllProduct')
                 .then(response => {
-                    this.products = response.data;
+                    this.products = response.data.product;
                 })
                 .catch(error=> {
                     console.log(error);
@@ -197,7 +197,7 @@
             getAllDiscountProgram(){
                 axios.get('admin/getAllDiscountProgram')
                 .then(response=>{
-                    this.discountPrograms = response.data;
+                    this.discountPrograms = response.data.discountProgram;
                 })
                 .catch(error => {
                     console.log(error);

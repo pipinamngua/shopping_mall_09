@@ -136,17 +136,20 @@
             createDiscountProgram(){
                 axios.post('admin/discountProgram', this.discountProgram)
                 .then(response => {
-                    // console.log(response);
-                    this.discountPrograms.unshift(response.data);
-                    this.discountProgram = {
-                        content: '',
-                        startedAt: '',
-                        endedAt: ''
+                    if (response.data.fail) {
+                        toastr.warning(response.data.fail);
+                    } else {
+                        this.discountPrograms.unshift(response.data.discountProgram);
+                        this.discountProgram = {
+                            content: '',
+                            startedAt: '',
+                            endedAt: ''
+                        }
+                        if (this.errors) {
+                            this.errors = [];
+                        }
                     }
-                if (this.errors) {
-                    this.errors = [];
-                }
-                }, )
+                })
                 .catch(error => {
                     if (error.response.status == 422) {
                         this.errors = error.response.data.errors;
@@ -172,12 +175,15 @@
                 this.discountProgram.status = detailDiscountProgram.status;
             },
             updateDiscount(oldValue, newValue){
-                // console.log(oldValue);
                 axios.put('admin/discountProgram/' + oldValue.id, newValue)
                 .then(response => {
-                    $("#edit-item").modal('hide');
-                    this.getAlldiscountProgram();
-                    toastr.success('the discount is updated successfully');
+                    if (response.data.fail) {
+                        toastr.warning(response.data.fail);
+                    } else {
+                        $("#edit-item").modal('hide');
+                        this.getAlldiscountProgram();
+                        toastr.success('the discount is updated successfully');
+                    }
                 })
                 .catch(error => {
                     console.log(error);

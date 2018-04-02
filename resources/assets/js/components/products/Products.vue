@@ -179,18 +179,24 @@ export default {
         createProduct() {
             axios.post('admin/products', this.product)
                 .then(response => {
-                    this.products.unshift(response.data);
-                    this.product = {
-                        category: '',
-                        product_name: '',
-                        description: '',
-                        image: '',
-                        original_price: '',
-                        status: 1
-                    };
-                    if (this.errors) {
-                        this.errors = []
+                    if (response.data.fail) {
+                        toastr.warning(response.data.fail);
+                    } else {
+                        this.products.unshift(response.data.product);
+                        toastr.success('successfully');
+                        this.product = {
+                            category: '',
+                            product_name: '',
+                            description: '',
+                            image: '',
+                            original_price: '',
+                            status: 1
+                        };
+                        if (this.errors) {
+                            this.errors = []
+                        }
                     }
+                    
                 })
                 .catch(error => {
                     if (error.response.status == 422) {

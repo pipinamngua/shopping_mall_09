@@ -108,8 +108,7 @@
             getAllProduct(){
                 axios.get('customer/All')
                 .then(response => {
-                    console.log(response);
-                    this.products= response.data;
+                    this.products= response.data.allProducts;
                 })
                 .catch(error => {
                     console.log(error);

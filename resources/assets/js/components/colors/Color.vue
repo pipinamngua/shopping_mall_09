@@ -60,8 +60,14 @@ export default {
 
         updateColor(oldColor, newColor) {
             axios.patch("admin/colors/" + oldColor.id, newColor).then(response => {
-                this.$emit('update-color');
-                this.cancelColor();
+                console.log(response);
+                if (response.data.fail) {
+                    toastr.warning(response.data.fail);
+                } else {
+                    this.$emit('update-color');
+                    toastr.success('successfully');
+                    this.cancelColor();
+                }
             })
         },
         deleteColor(oldColor, newColor) {
