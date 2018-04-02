@@ -8,4 +8,5 @@
 <script src="{{ asset('library/customers/bower_shopping_mall/customers/bootstrap-hover-dropdown.js') }}"></script>
 <script src="{{ asset('library/customers/bower_shopping_mall/customers/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('library/customers/bower_shopping_mall/customers/front.js') }}"></script>
-
+<script src="{{ asset('library/customers/toastr/build/toastr.min.js') }}"></script>
+@yield('javascript')

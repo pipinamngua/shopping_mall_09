@@ -20,3 +20,4 @@ mix.copyDirectory('node_modules/jquery', 'public/js/admins/jquery');
 mix.copyDirectory('resources/assets/images', 'public/images');
 mix.copyDirectory('node_modules/toastr', 'public/library/customers/toastr');
 mix.copyDirectory('resources/assets/css', 'public/css');
+mix.copyDirectory('resources/assets/js/customers', 'public/js/customers');

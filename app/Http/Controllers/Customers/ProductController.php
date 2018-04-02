@@ -75,4 +75,18 @@ class ProductController extends Controller
 
         return response()->json(['relatedProduct' => $relatedProduct]);
     }
+
+    public function getListProductByCategory($id)
+    {
+        $check = settype($id, 'int');
+        if ($check) {
+            $products = $this->productRepository->getProductByCategory($id);
+
+            return view('customers.listProduct', compact([
+                'products'
+            ]));
+        }
+        
+        return App::abort(404);
+    }
 }

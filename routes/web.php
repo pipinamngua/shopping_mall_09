@@ -67,3 +67,33 @@ Route::get('customer/getDiscount/{id}', 'Customers\ProductController@getDiscount
 Route::get('customer/getAttribute/{id}', 'Customers\ProductController@getAttribute');
 Route::get('customer/getColor/{id}/{colorId}', 'Customers\ProductController@getColor');
 Route::get('customer/getRelatedProduct/{id}', 'Customers\ProductController@relatedProduct');
+
+Route::get('category/{id}', [
+    'as' => 'list-product',
+    'uses' => 'Customers\ProductController@getListProductByCategory'
+]);
+
+Route::get('show-cart', [
+    'as' => 'showcart',
+    'uses' => 'CartController@getShowCart'
+]);
+
+Route::get('add-cart', [
+    'as' => 'addcart',
+    'uses' => 'CartController@getAddCart'
+]);
+
+Route::get('get-cart', [
+    'as' => 'getcart',
+    'uses' => 'CartController@getCart'
+]);
+
+Route::get('update-cart', [
+    'as' => 'updatecart',
+    'uses' => 'CartController@getUpdateCart'
+]);
+
+Route::get('del-cart', [
+    'as' => 'deletecart',
+    'uses' => 'CartController@getDeleteCart'
+]);
