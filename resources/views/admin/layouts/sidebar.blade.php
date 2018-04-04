@@ -55,6 +55,13 @@
                     <li><a href="{{ route('discount') }}"><i class="fa fa-circle-o"></i> Set Discount Products</a></li>
                 </ul>
             </li>
+            <li class="active">
+                <a href="{{ route('order') }}">
+                    <i class="fa fa-laptop"></i>
+                    <span>Orders</span>
+                    <span class="pull-right-container"></span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="product-slider">
+        <div class="product-slider owl-carousel owl-theme" style="display: block;">
             <div class="item" v-for="product in products">
                 <div class="product" v-if="!product.discount_percent">
                     <div class="flip-container">
