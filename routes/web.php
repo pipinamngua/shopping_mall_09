@@ -58,6 +58,18 @@ Route::middleware('admin')->group(function () {
         'as' => 'listuser',
         'uses' => 'Admins\UserController@getListUser'
     ]);
+    Route::get('order', [
+        'as' => 'order',
+        'uses' => 'Admins\OrderController@getListOrder'
+    ]);
+    Route::get('order-detail/{id}', [
+        'as' => 'orderdetail',
+        'uses' => 'Admins\OrderDetailController@getListOrderDetail'
+    ]);
+    Route::get('update-status-order', [
+        'as' => 'updatestatusorder',
+        'uses' => 'Admins\OrderDetailController@getUpdateStatusOrder'
+    ]);
 });
 
 Route::resource('customer/products','Customers\ProductController');
@@ -96,4 +108,24 @@ Route::get('update-cart', [
 Route::get('del-cart', [
     'as' => 'deletecart',
     'uses' => 'CartController@getDeleteCart'
+]);
+
+Route::post('checkout', [
+    'as' => 'checkout',
+    'uses' => 'CheckoutController@postCheckout'
+]);
+
+Route::get('my-order/{id}', [
+    'as' => 'myorder',
+    'uses' => 'HomeController@getMyOrder'
+]);
+
+Route::get('my-order-detail/{id}', [
+    'as' => 'myorderdetail',
+    'uses' => 'HomeController@getMyOrderDetail'
+]);
+
+Route::get('delete-order/{id}',  [
+    'as' => 'deleteorder',
+    'uses' => 'HomeController@getDeleteOrder'
 ]);

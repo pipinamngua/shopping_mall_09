@@ -14,7 +14,7 @@
     </title>
     <base href="{{asset('')}}">
     <meta name="keywords" content="">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel='stylesheet' type='text/css'>
     <!-- styles -->
     <link href="{{ asset('library/customers/bower_shopping_mall/customers/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('library/customers/bower_shopping_mall/customers/font-awesome.css') }}" rel="stylesheet">
@@ -42,6 +42,7 @@
                 <ul class="menu">
                     @if (Route::has('login'))
                         @auth
+                            <li><a href="{{ route('myorder', Auth::user()->id) }}">My Order</a>
                             <li>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -103,7 +104,10 @@
                             @foreach($categories as $category)
                                 @if($category['parent_id'] == null)
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"> {{ $category['category_name'] }} <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                                    data-hover="dropdown" data-delay="200"> 
+                                        {{ $category['category_name'] }} <b class="caret"></b>
+                                    </a>
                                     @php
                                         subMenu($categories, $category['id']);
                                     @endphp
@@ -120,7 +124,7 @@
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="{{ route('showcart') }}" class="btn btn-primary navbar-btn">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="hidden-sm home_count_cart">(empty)</span>{{-- 3 items in cart --}}
+                        <span class="hidden-sm home_count_cart">(empty)</span>
                     </a>
                 </div>
                 <!--/.nav-collapse -->

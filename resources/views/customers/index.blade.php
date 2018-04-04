@@ -60,19 +60,9 @@
             <!-- /.container -->
         </div>
         <!-- /.container -->
-    </div>
-    <!-- /#advantages -->
-    <!-- *** ADVANTAGES END *** -->
-    <!-- *** HOT PRODUCT SLIDESHOW ***
-        _________________________________________________________ -->
-    <hotproduct></hotproduct>
-   
-    <allproduct></allproduct>
-    <!-- /#hot -->
-    <!-- *** HOT END *** -->
-    <!-- *** GET INSPIRED ***
-        _________________________________________________________ -->
-    <div class="container" data-animate="fadeInUpBig">
+        <hotproduct></hotproduct>
+        <allproduct></allproduct>
+        <div class="container" data-animate="fadeInUpBig">
         <div class="col-md-12">
             <div class="box slideshow">
                 <h3>Get Inspired</h3>
@@ -96,6 +86,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- /#advantages -->
+    <!-- *** ADVANTAGES END *** -->
+    <!-- *** HOT PRODUCT SLIDESHOW ***
+        _________________________________________________________ -->
+    
+   
+    
+    <!-- /#hot -->
+    <!-- *** HOT END *** -->
+    <!-- *** GET INSPIRED ***
+        _________________________________________________________ -->
         <!-- *** GET INSPIRED END *** -->
         <!-- *** BLOG HOMEPAGE ***
             _________________________________________________________ -->
